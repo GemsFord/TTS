@@ -1,4 +1,7 @@
 name: "Docker build and push"
+permissions:
+      contents: read
+      packages: write
 on:
   pull_request:
   push:
@@ -29,11 +32,11 @@ jobs:
         id: compute-tag
         run: |
           set -ex
-          base="ghcr.io/coqui-ai/tts"
+          base="ghcr.io/gemsford/tts"
           tags="" # PR build
 
           if [[ ${{ matrix.base }} = "python:3.10.8-slim" ]]; then
-            base="ghcr.io/coqui-ai/tts-cpu"
+            base="ghcr.io/gemsford/tts-cpu"
           fi
 
           if [[ "${{ startsWith(github.ref, 'refs/heads/') }}" = "true" ]]; then
