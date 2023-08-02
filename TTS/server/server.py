@@ -207,6 +207,12 @@ class DummyLock:
     def release(self):
         pass
 
+    def __enter__(self):
+        self.acquire()
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        self.release()
+
 lock = DummyLock()
 
 
