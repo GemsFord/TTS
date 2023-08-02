@@ -29,11 +29,11 @@ jobs:
         id: compute-tag
         run: |
           set -ex
-          base="ghcr.io/GemsFord/TTS"
+          base="ghcr.io/gemsford/tts"
           tags="" # PR build
 
           if [[ ${{ matrix.base }} = "python:3.10.8-slim" ]]; then
-            base="ghcr.io/GemsFord/TTS-cpu"
+            base="ghcr.io/gemsford/tts-cpu"
           fi
 
           if [[ "${{ startsWith(github.ref, 'refs/heads/') }}" = "true" ]]; then
