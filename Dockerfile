@@ -11,4 +11,4 @@ RUN rm -rf /root/.cache/pip
 RUN make install
 
 ENTRYPOINT []
-CMD ["bash", "-c", "python3 TTS/server/server.py --list_models && python3 TTS/server/server.py --model_name tts_models/en/vctk/vits --use_cuda true"]
+CMD ["bash", "-c", "python3 TTS/server/server.py --list_models && python3 TTS/server/server.py --model_name $MODEL_NAME --use_cuda $USE_CUDA"]

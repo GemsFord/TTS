@@ -48,3 +48,4 @@ einops
 transformers
 #deps for bark
 encodec
+gunicorn
